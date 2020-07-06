@@ -35,3 +35,15 @@ print(len(x))
 # YOUR CODE HERE
 for num in x:
     print(num * 1000)
+
+evens = [n for n in range(20) if n % 2 == 0]
+print(evens)
+
+squares = []
+for n in range(20):
+    squares.append(n*n)
+print(squares)
+
+
+squares = [n*n for n in range(20)]
+print(squares)
