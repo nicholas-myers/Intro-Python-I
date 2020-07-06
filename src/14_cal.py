@@ -33,7 +33,7 @@ from datetime import datetime
 
 
 
-year_month = input("Enter a year: ,Then a month separated by a comma: ").split(",")
+year_month = input("Enter a month: ,Then you may enter a year separated by a comma: ").split(",")
 # print(year_month)
 if year_month == [""]:
     print(calendar.month(2020, 7))
@@ -41,11 +41,10 @@ elif len(year_month) == 1:
     month = int(year_month[0])
     print(calendar.month(2020, month))
 elif len(year_month) > 1:
-      month = int(year_month[0])
-      year = int(year_month[1])
-      
-      if year < 1800 or month > 12:
-          print("Please enter year first then month")
-      else: 
-          print(calendar.month(year, month))
+    month = int(year_month[0])
+    year = int(year_month[1])
+    if year < 1800 or month > 12:
+        print("Please enter month first then year")
+    else: 
+        print(calendar.month(year, month))
 
