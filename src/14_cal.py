@@ -31,20 +31,43 @@ import sys
 import calendar
 from datetime import datetime
 
+print(sys.argv)
+
+today = datetime.today()
+this_year = today.year
+this_month = today.month
+
+if len(sys.argv) == 1:
+    print(calendar.month(this_year, this_month))
+elif len(sys.argv) == 2:
+    month = int(sys.argv[1])
+    if month > 12 or month < 1:
+        print("please enter a valid month 1-12")
+    elif month <=12 and month >= 1:
+          print(calendar.month(this_year, month))
+elif len(sys.argv) == 3:
+    month = int(sys.argv[1])
+    year = int(sys.argv[2])
+    if month > 12 or month < 1 or year < 1800:
+        print("please enter a valid month 1-12 and year greater than 1800")
+    elif month <=12 and month >= 1:
+          print(calendar.month(year, month))
 
 
-year_month = input("Enter a month: ,Then you may enter a year separated by a comma: ").split(",")
+# year_month = input("Enter a month: ,Then you may enter a year separated by a comma: ").split(",")
 # print(year_month)
-if year_month == [""]:
-    print(calendar.month(2020, 7))
-elif len(year_month) == 1:
-    month = int(year_month[0])
-    print(calendar.month(2020, month))
-elif len(year_month) > 1:
-    month = int(year_month[0])
-    year = int(year_month[1])
-    if year < 1800 or month > 12:
-        print("Please enter month first then year")
-    else: 
-        print(calendar.month(year, month))
+
+# print(sys.argv)
+# if year_month == [""]:
+#     print(calendar.month(2020, 7))
+# elif len(year_month) == 1:
+#     month = int(year_month[0])
+#     print(calendar.month(2020, month))
+# elif len(year_month) > 1:
+#     month = int(year_month[0])
+#     year = int(year_month[1])
+#     if year < 1800 or month > 12:
+#         print("Please enter month first then year")
+#     else: 
+#         print(calendar.month(year, month))
 
